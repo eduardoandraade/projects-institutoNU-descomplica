@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "name": "Eduardo Andrade",
+            "email": "dudu@email.com",
+            "phone": "85-98393-0000",
+            "id": 1
+        },
+        {
+            "name": "Jonh Doe",
+            "email": "jonh@email.com",
+            "phone": "51-72222-0000",
+            "id": 2
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com o DOM</title>
+</head>
+<body>
+    <div class="style">
+        Div com estilo
+    </div>
+    <div class="style">
+        Div com estilo 2
+    </div>
+    <p class="style">Elemento p com estilo</p>
+    <p>Isso é <span class="style">elemento span</span> dentro de um p</p>
+
+
+    <script>
+        var elementos = document.querySelectorAll('.style')
+
+        for(i = 0; i < elementos.length; i++){
+            elementos[i].style.backgroundColor = 'blue'
+            elementos[i].style.color = 'white'
+            elementos[i].innerText = elementos[i].innerText.toUpperCase()
+        }
+    </script>
+
+</body>
+</html>

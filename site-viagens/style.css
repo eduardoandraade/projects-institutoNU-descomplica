@@ -1,0 +1,20 @@
+h1{
+    font-size: 63px;
+    color: #f4f4f4;
+}
+
+h2 {
+    font-size: 40px;
+    color: #303030;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+}
+
+.carousel-caption h5{
+    font-size: 80px;
+    color: #ffc107;
+    text-shadow: 2px 2px 2px black;
+}

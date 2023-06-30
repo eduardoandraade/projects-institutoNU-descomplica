@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos com elementos DOM</title>
+</head>
+<body>
+    <p>Clique no botão a seguir e veja o resultado</p>
+
+    <form action="">
+        <input type="button" onclick="exempleEvent()" value="Clique aqui!">
+    </form>
+
+    <h1 style="border: 1px solid silver;" id="h1" onmouseover="passarMouse()" onmouseout="tirarMouse()">Olá,</h1>
+
+
+    <script>
+        function exempleEvent() {
+            alert("Evento ativado!")
+        }
+
+        function passarMouse() {
+            document.getElementById('h1').innerHTML = "Olá, tudo bem? Você passou o mouse em cima do elemento!"
+        }
+
+        function tirarMouse() {
+            document.getElementById('h1').innerHTML = "Tirou o mouse do elemento"
+        }
+
+    </script>   
+</body>
+</html>

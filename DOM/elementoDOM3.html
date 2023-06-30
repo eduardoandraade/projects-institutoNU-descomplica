@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos no DOM</title>
+</head>
+<body> 
+    <h1>Usando seletor do DOM</h1>
+    <ul>
+        <li>Javascript</li>
+        <li>ReactJS</li>
+        <li>NodeJS</li>
+    </ul>
+
+    <div id="conteudo"  name="divconteudo" class="mensagem"></div>
+
+    <div name="divconteudo" class="mensagem"></div>
+    
+    <div name="divconteudo" class="mensagem"></div>
+
+    <span id="novospan" class="novo">Span text</span>
+
+    <div class="mensagem"></div>
+
+
+    <script>
+        element = document.getElementsByTagName('li')[0];
+        element.style.color = 'blue'
+
+        element1 = document.getElementsByTagName('li')[1];
+        element1.style.background = 'red'
+
+        element2 = document.getElementsByTagName('li')[2]
+        element2.innerText = "NestJS"
+
+        elementDiv = document.getElementById('conteudo')
+        elementDiv.innerHTML = "<p> tenho uma tag <b>P em negrito</b></p>"
+
+        elementDivName = document.getElementsByName('divconteudo')[1]
+        elementDivName.style.color = 'blue'
+        elementDivName.innerText = "<p>Inserindo um texto</p>"
+
+        elementDivClass = document.getElementsByName('divconteudo')[2]
+        elementDivClass.innerHTML = "<h2>Inserindo uma tag HTML dentro da div</h2>"
+
+        elementSpamClass = document.querySelector('#novospan');
+        elementSpamClass.style.color = 'green'
+
+        elementSelect = document.querySelectorAll('.mensagem')[3]
+        elementSelect.innerHTML = '<p>Criando elemento pelo DOM</p>'
+    </script>
+</body>
+</html>

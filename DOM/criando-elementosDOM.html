@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando elementos com o DOM</title>
+</head>
+<body>
+    
+    <ul id="list">
+        <li>Produtos</li>
+    </ul>
+
+    <ul id="times">
+
+    </ul>
+</body>
+
+
+<script>
+    var element = document.createElement("div");
+
+    element.innerText = "Incluindo texto no elemento div";
+    element.style.backgroundColor = "lightgreen";
+    document.body.append(element)
+
+    var list = document.getElementById('list')
+    var li = document.createElement("li");
+    li.textContent = "Sobre Nós";
+    list.appendChild(li);
+
+    times = ["Flamengo", "Vasco", "Fluminense", "Chelsea"];
+
+    var listaDeTimes = document.getElementById('times')
+
+    for(var i = 0; i < times.length; i++){
+        var time = times[i];
+        var listItem = document.createElement('li');
+        listItem.innerText = time;
+        listItem.style.border = '1px solid blue'
+        listItem.style.padding = '3px';
+        listaDeTimes.appendChild(listItem);
+    }
+
+    
+</script>
+</html>
