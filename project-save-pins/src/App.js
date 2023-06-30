@@ -7,7 +7,7 @@ import {
 import ContextApp from './store/ContextApp';
 import Header from './components/Header/Header';
 import HomePage from './pages/Home/HomePage';
-import MinhasPastas from './pages/Home/MinhasPastas/MinhasPastas';
+import MinhasPastas from './pages/MinhasPastas/MinhasPastas';
 
 function App() {
   // saveFolder('JavaScript');
@@ -16,7 +16,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <ContextApp>
+      <ContextApp initialState={{ name:"João fonseca" }}>
+        
           <Header />
           <Routes>
             <Route path='/' element={<HomePage/>}/>

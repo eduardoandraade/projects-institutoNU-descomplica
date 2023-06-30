@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomListGroup  from '../../../components/ListGroup/ListGroup';
+import CustomListGroup  from '../../components/ListGroup/ListGroup';
 import Container from 'react-bootstrap/Container';
 
 const MinhasPastas = () => {

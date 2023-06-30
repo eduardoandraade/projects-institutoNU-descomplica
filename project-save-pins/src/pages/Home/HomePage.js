@@ -10,7 +10,7 @@ import { useAppContext } from '../../store/ContextApp'
 
 
 const HomePage = () => {
-  const user = useAppContext();
+  const {state} = useAppContext();
   return (
     <div>
 
@@ -23,7 +23,7 @@ const HomePage = () => {
         }}
       />
 
-          <span>{user.name}</span>
+        <span>{state.name}</span>
 
 
       <Container fluid>
