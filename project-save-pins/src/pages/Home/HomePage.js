@@ -6,11 +6,9 @@ import Card from '../../components/Card/Card';
 import { Notification } from '../../components/Notification/Notification';
 import ModalCreateFolder from '../../components/containers/ModalCreateFolder/ModalCreateFolder';
 import { ModalSavePin } from '../../components/containers/ModalSavePin/ModalSavePin';
-import { useAppContext } from '../../store/ContextApp'
 
 
 const HomePage = () => {
-  const {state} = useAppContext();
   return (
     <div>
 
@@ -23,7 +21,6 @@ const HomePage = () => {
         }}
       />
 
-        <span>{state.name}</span>
 
 
       <Container fluid>

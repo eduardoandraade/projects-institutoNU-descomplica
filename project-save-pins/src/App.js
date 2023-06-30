@@ -9,14 +9,20 @@ import Header from './components/Header/Header';
 import HomePage from './pages/Home/HomePage';
 import MinhasPastas from './pages/MinhasPastas/MinhasPastas';
 
-function App() {
-  // saveFolder('JavaScript');
- 
 
+const initialState = {
+  activePin: null,
+  mode: null,
+  folders: [],
+  type: null
+}
+
+function App() {
+  
   return (
     <BrowserRouter>
       <div className="App">
-      <ContextApp initialState={{ name:"João fonseca" }}>
+      <ContextApp initialState={initialState}>
         
           <Header />
           <Routes>

@@ -16,5 +16,14 @@
     name: "Programação",
     pin: ["pin1", "pin2", "pin3"]
     },
-
 ]
+
+### Estado Global
+...
+{
+    folders: [],
+    activePin: "",
+    mode: "savePin" | "createFolder",
+    type: null
+}
+...
