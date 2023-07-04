@@ -13,7 +13,7 @@ import { saveFolderSuccessType } from '../../store/Types';
 
 const HomePage = () => {
 
-  const {state, dispatch} = useAppContext();
+  const {state} = useAppContext();
   const [ showFeedback, setShowFeedback ] = useState(false);
 
   useEffect(() => {

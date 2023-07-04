@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from '../../Modal/Modal'
 import Form from 'react-bootstrap/Form'
 import  {useAppContext}  from '../../../store/ContextApp'
 import { CloseModalAction, saveFolderAction } from '../../../store/Actions'
+import { saveFolderInitType, saveFolderSuccessType } from '../../../store/Types'
+
 
 const ModalCreateFolder = ({ open }) => {
     const { state, dispatch } = useAppContext();
@@ -17,12 +19,19 @@ const ModalCreateFolder = ({ open }) => {
 
         console.log('Fez o submit de', folderName);
         saveFolderAction(dispatch, folderName);
-        handleClose();
+        
     }
 
     const handleChange = (e) => {
         setFolderName(e.target.value);
     }
+
+    useEffect(() => {
+      if (state.type === saveFolderSuccessType) {
+        handleClose();
+      }
+    }, [state.type])
+  
 
 
   return (  
@@ -35,7 +44,7 @@ const ModalCreateFolder = ({ open }) => {
                 label: 'Criar e Salvar',
                 loadingLabel: 'Criando',
                 variant: 'secondary',
-                loading: false,
+                loading: state.type === saveFolderInitType,
                 type: 'submit',
                 form: 'form-create-pasta'
             }    
