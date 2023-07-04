@@ -2,11 +2,11 @@ import Button from '../Button/Button';
 import ModalBS from 'react-bootstrap/Modal';
 
 
-function Modal({ title, children, open, controls = [] }) {
+function Modal({ title, children, open, controls = [], onHide }) {
 
   return (
     <>
-      <ModalBS show={open} onHide={() => {}}>
+      <ModalBS show={open} onHide={onHide}>
         <ModalBS.Header closeButton>
           <ModalBS.Title>{title}</ModalBS.Title>
         </ModalBS.Header>
