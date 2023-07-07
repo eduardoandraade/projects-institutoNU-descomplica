@@ -66,3 +66,26 @@ export const savePinInFolder = async (folderId, pinId) => {
 
     return {...folders[folderIndex]}
 }
+
+export const getPins = async () => {
+  return [
+    {
+      id: '123',
+      title: 'Design',
+      image: 'https://i.pinimg.com/564x/f5/0b/e3/f50be3e44828d8856057fc163a4c1152.jpg',
+      quantity: 0
+    },
+    {
+      id: '133',
+      title: 'Branding',
+      image: 'https://i.pinimg.com/564x/aa/6f/d1/aa6fd19deafd7db051a6a77d81e1a4fe.jpg',
+      quantity: 0
+    },
+    {
+      id: '134',
+      title: 'Minimalist',
+      image: 'https://i.pinimg.com/564x/4a/1f/a0/4a1fa03129db75a667b0e1c2f9ccd349.jpg',
+      quantity: 0
+    },
+  ]
+}

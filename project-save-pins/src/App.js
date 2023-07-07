@@ -14,7 +14,8 @@ const initialState = {
   activePin: null,
   mode: null,
   folders: [],
-  type: null
+  type: null,
+  pins: []
 }
 
 function App() {

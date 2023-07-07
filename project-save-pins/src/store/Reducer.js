@@ -51,6 +51,12 @@ export function reducer(state, action) {
                 folders: action.payload
             }
 
+        case types.fetchPinsSuccessType:
+            return {
+                ...state,
+                pins: action.payload
+            }
+
         default: 
             return {
                 ...state,

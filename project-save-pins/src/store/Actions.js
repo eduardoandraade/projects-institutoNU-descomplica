@@ -77,3 +77,19 @@ export const savePinInFolderAction = async (dispatch, pinId, folderId) => {
     dispatch(savePinInFolderSuccessAction(folders))
 }
 
+export const fetchPinsInitAction = () => ({
+    type: types.fetchPinsInitType
+})
+
+export const fetchPinsSuccessAction = (pinsData) => ({
+    type: types.fetchPinsSuccessType,
+    payload: pinsData
+})
+
+export const fetchPinsAction = async (dispatch) => {
+    dispatch(fetchPinsInitAction());
+    const pinsData = await pinServices.getPins();
+    console.log('pinsData', pinsData)
+    dispatch(fetchPinsSuccessAction(pinsData));
+}
+
