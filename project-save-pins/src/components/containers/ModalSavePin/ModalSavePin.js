@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from '../../Modal/Modal'
 import Button from '../../Button/Button'
 import ListGroup from 'react-bootstrap/ListGroup'
@@ -14,6 +14,7 @@ import {
 
 export const ModalSavePin = ({ open }) => {
     const { state, dispatch } = useAppContext();
+    const [ itensLoading, setItensLoadgin] = useState({});
 
     const handleClose = () => {
         console.log('fechando!')
@@ -26,9 +27,22 @@ export const ModalSavePin = ({ open }) => {
         dispatch(OpenModalCreateFolderAction());
     };
 
-    const handleClick = (folderId) => {
-        savePinInFolderAction(dispatch, state.activePinId, folderId);
-    }
+    const handleClick = async (folderId) => {
+        setItensLoadgin((prevState) => {
+            return {
+                ...prevState,
+                [folderId]: true
+            }
+        });
+
+        await savePinInFolderAction(dispatch, state.activePinId, folderId);
+
+
+        setItensLoadgin({
+            ...itensLoading,
+            [folderId]: false
+        });
+    };
 
     const foldersNormalized = state.folders.map(folder => {
         return ({
@@ -71,6 +85,7 @@ export const ModalSavePin = ({ open }) => {
                                     onClick={() => handleClick(folder.id)}
                                     variant={folder.saved ? 'secondary' : 'primary'}
                                     disbled={folder.saved}
+                                    loading={itensLoading[folder.id]}
                                 />
                             </Col>
                         </Row>

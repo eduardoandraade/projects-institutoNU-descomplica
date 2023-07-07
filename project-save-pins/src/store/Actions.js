@@ -70,11 +70,10 @@ export const savePinInFolderSuccessAction = (folders) => ({
 export const savePinInFolderAction = async (dispatch, pinId, folderId) => {
     dispatch(savePinInFolderInitAction());
 
-    await sleep(11000);
+    await sleep(1000);
 
     await pinServices.savePinInFolder(folderId, pinId)
     const folders = await pinServices.getFolders();
     dispatch(savePinInFolderSuccessAction(folders))
-    
 }
 
