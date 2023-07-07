@@ -7,9 +7,9 @@ export const CardContainer = (props) => {
 
     const { state, dispatch } = useAppContext();
 
-    const handleClick = () => {
-        console.log('clicou')
-        dispatch (OpenModalSavePinAction())
+    const handleClick = (pinId) => {
+        console.log('clicou', pinId)
+        dispatch (OpenModalSavePinAction(pinId))
     }
     return (
 

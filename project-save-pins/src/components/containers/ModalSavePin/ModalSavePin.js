@@ -24,7 +24,11 @@ export const ModalSavePin = ({ open }) => {
 
     useEffect(() => {
         fetchFoldersAction(dispatch);
-    }, [])
+        }, [])
+
+    useEffect(() => {
+        console.log(state)
+    }, [state])
 
 
 

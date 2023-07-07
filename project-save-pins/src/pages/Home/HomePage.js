@@ -13,7 +13,7 @@ import { saveFolderSuccessType } from '../../store/Types';
 
 const HomePage = () => {
 
-  const {state} = useAppContext();
+  const { state, dispatch} = useAppContext();
   const [ showFeedback, setShowFeedback ] = useState(false);
 
   useEffect(() => {
@@ -39,13 +39,13 @@ const HomePage = () => {
       <Container fluid>
       <Row>
       <Col xs={12} md={3}>
-          <CardContainer title={'ArtesLifes'} quantity={0} image={'https://i.pinimg.com/564x/f5/0b/e3/f50be3e44828d8856057fc163a4c1152.jpg'}/>
+          <CardContainer id='123' title={'ArtesLifes'} quantity={0} image={'https://i.pinimg.com/564x/f5/0b/e3/f50be3e44828d8856057fc163a4c1152.jpg'}/>
       </Col>
       <Col xs={12} md={3}>
-          <CardContainer title={'ArtesLifes'} quantity={0} image={'https://i.pinimg.com/564x/ed/2c/bd/ed2cbd439a3043fcb41771f0dff536fc.jpg'}/>
+          <CardContainer id='133' title={'ArtesLifes'} quantity={0} image={'https://i.pinimg.com/564x/ed/2c/bd/ed2cbd439a3043fcb41771f0dff536fc.jpg'}/>
       </Col>
       <Col xs={12} md={3}>
-          <CardContainer title={'ArtesLifes'} quantity={0} image={'https://i.pinimg.com/564x/8b/64/56/8b6456d0268cec464a647ca4575f2686.jpg'}/>
+          <CardContainer id='143' title={'ArtesLifes'} quantity={0} image={'https://i.pinimg.com/564x/8b/64/56/8b6456d0268cec464a647ca4575f2686.jpg'}/>
       </Col>
       </Row>
     </Container>

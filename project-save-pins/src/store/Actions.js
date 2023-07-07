@@ -7,8 +7,9 @@ const sleep = (time) => (
     })
 );
 
-export const OpenModalSavePinAction = () => ({
-    type: types.openModalSavePinType
+export const OpenModalSavePinAction = (pinId) => ({
+    type: types.openModalSavePinType,
+    payload: pinId
 })
 
 export const OpenModalCreateFolderAction = () => ({
