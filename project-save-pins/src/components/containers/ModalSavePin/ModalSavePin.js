@@ -6,7 +6,11 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useAppContext } from '../../../store/ContextApp'
 import { CloseModalAction } from '../../../store/Actions'
-import { fetchFoldersAction, OpenModalCreateFolderAction } from '../../../store/Actions'
+import { 
+    fetchFoldersAction, 
+    OpenModalCreateFolderAction,
+    savePinInFolderAction,
+    } from '../../../store/Actions'
 
 export const ModalSavePin = ({ open }) => {
     const { state, dispatch } = useAppContext();
@@ -22,15 +26,15 @@ export const ModalSavePin = ({ open }) => {
         dispatch(OpenModalCreateFolderAction());
     };
 
+    const handleClick = (folderId) => {
+        savePinInFolderAction(dispatch, state.activePinId, folderId);
+    }
+
     useEffect(() => {
         fetchFoldersAction(dispatch);
         }, [])
 
-    useEffect(() => {
-        console.log(state)
-    }, [state])
-
-
+ 
 
     return ( 
         <Modal 
@@ -53,7 +57,9 @@ export const ModalSavePin = ({ open }) => {
                     <ListGroup.Item key={folderIndex} >
                         <Row>
                             <Col xs={8}>{folder.name}</Col>
-                            <Col xs={4} className='text-end' ><Button label='Salvar' loadingLabel='Salvando' /></Col>
+                            <Col xs={4} className='text-end' >
+                                <Button label='Salvar' loadingLabel='Salvando' onClick={() => handleClick(folder.id)}/>
+                            </Col>
                         </Row>
                     </ListGroup.Item>
                 ))}

@@ -33,6 +33,7 @@ export function reducer(state, action) {
                 type:types.openModalCreateFolderType,
                 mode: 'createFolder'
             }
+            
         case types.saveFolderSuccessType:
             return {
                 ...state,
@@ -42,6 +43,14 @@ export function reducer(state, action) {
                     action.payload
                 ]
             }
+            
+        case types.savePinInFolderSuccessType: 
+            return {
+                ...state,
+                type: types.savePinInFolderSuccessType,
+                folders: action.payload
+            }
+
         default: 
             return {
                 ...state,
