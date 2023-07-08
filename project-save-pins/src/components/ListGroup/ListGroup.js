@@ -15,11 +15,10 @@ const CustomListGroup = ({ items = [] }) => {
             <div className="ms-2 me-auto">
               <div className="fw-bold">{item.title}</div>
             </div>
-            {item.count ? (
-                <Badge bg="primary" pill>
-              {item.count}
-                </Badge> 
-            ) : null }
+            <Badge bg="primary" pill>
+              {item.count ? item.count : 0}
+            </Badge> 
+
             
           </ListGroup.Item>
         );
